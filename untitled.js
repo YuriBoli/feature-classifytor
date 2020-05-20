@@ -33,6 +33,7 @@ function separarNaoInteiro(cidades,colors, itenVerificado){
 }
 function grapDois(cidades, colors){
 	var cidades = cidades.filter(distinct)
+	cidades = cidades.sort()
 	console.log(cidades)
 	var verificacao = cidades.length / colors.length
 	if(Number.isInteger(verificacao)){
