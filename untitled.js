@@ -33,15 +33,13 @@ function separarNaoInteiro(cidades,colors, itenVerificado){
 }
 function grapDois(cidades, colors){
 	var cidades = cidades.filter(distinct)
-	cidades = cidades.sort()
-	console.log(cidades)
+	cidades = cidades.sort((a, b) => a - b)
 	var verificacao = cidades.length / colors.length
 	if(Number.isInteger(verificacao)){
 		var quantidadeListas = separarIguais(cidades,colors, verificacao)
 	} else {
 		var quantidadeListas = separarNaoInteiro(cidades,colors, verificacao)
 	}
-	console.log(quantidadeListas)
 	var cidadePosicao = 0;
 	var contador = 0;
 	var inicial_final =[];
@@ -56,7 +54,6 @@ function grapDois(cidades, colors){
 			colorPosition.final = cidades[cidadePosicao]
 			cidadePosicao ++
 		} else {
-			console.log(intenLista)
 			while(contador < intenLista){
 				if(contador <= 0){
 					colorPosition.inicial = cidades[cidadePosicao]
